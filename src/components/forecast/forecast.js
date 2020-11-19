@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from 'react';
 
 const Forecast = () => {
+  let [ resObject, setResObject ] = useState({});
+
   function getForecast() {
     fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=newyork,ny", {
 	"method": "GET",
@@ -9,8 +11,9 @@ const Forecast = () => {
 		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
 	}
 })
-.then(res => {
-	console.log(res);
+.then(res => res.json())
+.then(res ={
+  setResObject(res)
 })
 .catch(err => {
 	console.error(err);
