@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Conditions from '../Conditions/Conditions';
+import ForecastForm from './ForecastForm';
 
 const Forecast = () => {
   let [ resObj, setResObj ] = useState({});
 
   function getForecast() {
-    fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=New%20York", {
+    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=New%20York`, {
 	    "method": "GET",
 	    "headers": {
 		    "x-rapidapi-key": "5e07d5ec86mshaec91845041a3b4p133e69jsncae261294a03",
@@ -25,7 +27,8 @@ const Forecast = () => {
         <div>
           {JSON.stringify(resObj)}
         </div>
-        <button onClick={getForecast}>Get Forecast</button>
+        < ForecastForm />
+        < Conditions resObj={resObj} />
     </div>
   )
 }
