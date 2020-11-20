@@ -4,11 +4,12 @@ import classes from './Conditions.module.css';
  
 const Conditions = (props) => {
   return (
-    <div>
+    <div className={classes.wrapper}>
       {props.error && <small>Please enter a valid city.</small>}
       {props.loading && <div>Loading...</div>}
+      
       { props.resObj.cod === 200 ?
-        <div className={classes.wrapper}>
+        <div>
           <p><strong>{ props.resObj.name }</strong></p>
           <p>It's currently { Math.round(props.resObj.main.temp) } degrees with { props.resObj.weather[0].description }.</p>
           <p>It feels like { Math.round(props.resObj.main.feels_like)} degrees</p>
