@@ -84,7 +84,10 @@ const Forecast = () => {
               Get Forecast
           </button>
         </form>
-        < Conditions resObj={resObj} />
+        < Conditions 
+          resObj={resObj}
+          error={error}
+          loading={loading} />
     </div>
   )
 }
