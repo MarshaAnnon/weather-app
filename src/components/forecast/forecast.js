@@ -9,8 +9,6 @@ const Forecast = () => {
   let [error, setError] = useState(false);
   let [loading, setLoading] =useState(false);
 
-  const uriEncodedCity = encodeURIComponent(city);
-
   function getForecast(e) {
     e.preventDefault();
     if (city.length <= 0) {
@@ -27,7 +25,7 @@ const Forecast = () => {
     fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
 	    "method": "GET",
 	    "headers": {
-		    "x-rapidapi-key": "apikey",
+		    "x-rapidapi-key": process.env.REACT_APP_API_KEY,
 		    "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
 	    }
     })
