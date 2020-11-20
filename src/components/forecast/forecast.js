@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Conditions from '../Conditions/Conditions';
+import classes from './Forecast.module.css';
 
 const Forecast = () => {
   let [ city, setCity ] = useState("");
@@ -29,17 +30,18 @@ const Forecast = () => {
     <div>
       <h2>Find Current Weather Conditions</h2>
         <div>
-          {JSON.stringify(resObj)}
+          {/* {JSON.stringify(resObj)} */}
         </div>
         <form onSubmit={ getForecast }>
           <input
+            className={classes.textInput}
             type="text"
             placeholder="Enter City"
             maxLength="50"
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-          <label>
+          <label className={classes.radio}>
             <input
               type="radio"
               name="units"
@@ -48,7 +50,7 @@ const Forecast = () => {
               onChange={(e) => setUnit(e.target.value)}
             /> Fahrenheit
           </label>
-          <label>
+          <label className={classes.radio}>
             <input
               type="radio"
               name="units"
@@ -57,7 +59,11 @@ const Forecast = () => {
               onChange={(e) => setUnit(e.target.value)}
             /> Celsius
           </label>
-          <button type="submit">Get Forecast</button>
+          <button 
+            className={classes.button}
+            type="submit">
+              Get Forecast
+          </button>
         </form>
         < Conditions resObj={resObj} />
     </div>
