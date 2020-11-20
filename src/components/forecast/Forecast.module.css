@@ -1,0 +1,29 @@
+.textInput {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  display: block;
+  font-size: large;
+  margin: 5px auto;
+  padding: 5px;
+}
+
+.textInput:focus {
+  border-color: #719ECE;
+  box-shadow: 0 0 10px rgb(50, 100, 153);
+  outline: none;
+}
+
+.radio {
+  font-size: small;
+}
+
+.button {
+  background: darkcyan;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  margin: 10px auto;
+  margin: 5px auto;
+}
