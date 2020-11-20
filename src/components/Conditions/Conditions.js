@@ -5,6 +5,8 @@ import classes from './Conditions.module.css';
 const Conditions = (props) => {
   return (
     <div>
+      {props.error && <small>Please enter a valid city.</small>}
+      {props.loading && <div>Loading...</div>}
       { props.resObj.cod === 200 ?
         <div className={classes.wrapper}>
           <p><strong>{ props.resObj.name }</strong></p>
