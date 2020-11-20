@@ -27,7 +27,7 @@ const Forecast = () => {
     fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
 	    "method": "GET",
 	    "headers": {
-		    "x-rapidapi-key": "5e07d5ec86mshaec91845041a3b4p133e69jsncae261294a03",
+		    "x-rapidapi-key": "apikey",
 		    "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
 	    }
     })
